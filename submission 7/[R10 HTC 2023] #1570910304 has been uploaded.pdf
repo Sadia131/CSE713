@@ -1,0 +1,95 @@
+Delivered-To: sadia.islam15@g.bracu.ac.bd
+Received: by 2002:a59:ca45:0:b0:3d0:3c87:c7b5 with SMTP id v5csp102192vqt;
+        Thu, 4 May 2023 21:12:52 -0700 (PDT)
+X-Google-Smtp-Source: ACHHUZ646rm8Sz4mfgnuAJulHwqUzjSZRv+z3SbBbmOUVrPGDyZdU1IBKSHvLiNdMcr9DsIFsZdV
+X-Received: by 2002:ac8:570e:0:b0:3ec:8c61:54d9 with SMTP id 14-20020ac8570e000000b003ec8c6154d9mr8244979qtw.14.1683259971944;
+        Thu, 04 May 2023 21:12:51 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1683259971; cv=none;
+        d=google.com; s=arc-20160816;
+        b=ryEdf1bzSlzqvIuk33hG0vSrJUvw3MzwMtdSTT4G9iI/3jyY/8ULT2ph1TUnFDv2JR
+         QvRCD/lPETGJFvRhxP2VY6Bac+pEQBYUfO4B/4iFxFn6H9N8sGPD0FajD8wqXr48GVUo
+         J4YWHgsIEne+APtn2lPBW81WC1g2AaItQUSxbAkv4XUZ3QqfxCdIG7iMpSfert+jkfcy
+         5vyGULobSFSBxv8FtIFCJoBEikh2LULb0KpgECIBf+03//hbAbHWfY3BYb7oCtaYI5hG
+         MzaqqId1TwqIs32Y45gJtoEYwiXnKs2Lq5V0Wf/sHUdwEAa7fu50W5B+4DxfEW65zQnG
+         DcNQ==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=feedback-id:content-transfer-encoding:keywords:date:subject
+         :message-id:reply-to:to:from:sender:mime-version:dkim-signature
+         :dkim-signature;
+        bh=VNu4voJXciGQENtlDbD6vSbKvxu93WHlib7TsKSyG4U=;
+        b=cxrcSEv15/WqVRcJefhHl1jy0gqhN2tLrv42sDMlGr3zRpdx383fdcyumS/6BkdPyE
+         oPh+fuL1wd48b1pvtI/l9y2EMx6HtFPHx6fXUbdoXeqNkv04gXmsfQspYybHl9eCGxgf
+         q79W+Tbk6EkOifzwAbWpncFzfLecgymSGDJaOxrgdITX9OEnzKMV1Ax+QUAB+PzzL16m
+         4Uz30ykzFiVYRxnu8bvdwGZibhRlpEIROyrI8pxgwNIr/Pr1jM1jBgwXKhRbJrxh/kEC
+         98NiYibGDmWVBc8/sJfZrwCjWnHWELL0N1bvm4wGVkyZP4I89Wpl13cloa2d8HyZCQPy
+         9hkQ==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@edas.info header.s=4wf2ebb5r7smlx24dd4j6prxwpezy3bh header.b=QFt7P3nk;
+       dkim=pass header.i=@amazonses.com header.s=224i4yxa5dv7c2xz3womw6peuasteono header.b=aj6+yeX4;
+       spf=pass (google.com: domain of 01000187ea1cd5e4-7fe96e28-084f-4fbb-8a4a-9dbc6bdeb57a-000000@mail.edas.info designates 54.240.8.55 as permitted sender) smtp.mailfrom=01000187ea1cd5e4-7fe96e28-084f-4fbb-8a4a-9dbc6bdeb57a-000000@mail.edas.info;
+       dmarc=pass (p=QUARANTINE sp=QUARANTINE dis=NONE) header.from=edas.info
+Return-Path: <01000187ea1cd5e4-7fe96e28-084f-4fbb-8a4a-9dbc6bdeb57a-000000@mail.edas.info>
+Received: from a8-55.smtp-out.amazonses.com (a8-55.smtp-out.amazonses.com. [54.240.8.55])
+        by mx.google.com with ESMTPS id a15-20020a05620a124f00b007468b38c249si347636qkl.381.2023.05.04.21.12.51
+        (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
+        Thu, 04 May 2023 21:12:51 -0700 (PDT)
+Received-SPF: pass (google.com: domain of 01000187ea1cd5e4-7fe96e28-084f-4fbb-8a4a-9dbc6bdeb57a-000000@mail.edas.info designates 54.240.8.55 as permitted sender) client-ip=54.240.8.55;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@edas.info header.s=4wf2ebb5r7smlx24dd4j6prxwpezy3bh header.b=QFt7P3nk;
+       dkim=pass header.i=@amazonses.com header.s=224i4yxa5dv7c2xz3womw6peuasteono header.b=aj6+yeX4;
+       spf=pass (google.com: domain of 01000187ea1cd5e4-7fe96e28-084f-4fbb-8a4a-9dbc6bdeb57a-000000@mail.edas.info designates 54.240.8.55 as permitted sender) smtp.mailfrom=01000187ea1cd5e4-7fe96e28-084f-4fbb-8a4a-9dbc6bdeb57a-000000@mail.edas.info;
+       dmarc=pass (p=QUARANTINE sp=QUARANTINE dis=NONE) header.from=edas.info
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/simple;
+	s=4wf2ebb5r7smlx24dd4j6prxwpezy3bh; d=edas.info; t=1683259971;
+	h=MIME-Version:Sender:From:To:Reply-to:Message-ID:Subject:Date:Content-Type:Content-Transfer-Encoding;
+	bh=9zbD39cprUPCLJjdN73eCi10ji/M4rEbKWiGAhngqCo=;
+	b=QFt7P3nkw5A0y/oCOwA95RH/L32A89Hgw1LXiBS9KcveZvtwoUDBP7bp6miVsiP/
+	nf2Z8UmTrgi3FbknXA2+7DoWI4ckuso/aBTIJYQqp17+11uA0RgcG1tQbYop3e9mKcW
+	A2byCX9bJSfaYdOgdRgfNK8HJQCrcsSENx42iuQE=
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/simple;
+	s=224i4yxa5dv7c2xz3womw6peuasteono; d=amazonses.com; t=1683259971;
+	h=MIME-Version:Sender:From:To:Reply-to:Message-ID:Subject:Date:Content-Type:Content-Transfer-Encoding:Feedback-ID;
+	bh=9zbD39cprUPCLJjdN73eCi10ji/M4rEbKWiGAhngqCo=;
+	b=aj6+yeX4BcwPcvABOrIb59zMbhaRL/4Sbgf9J9Zkiy8MmISk3Qsx6Mo0ZdMqohsP
+	Xsd1FKg1wKy6IECRSt4w0KEpu5LkhaFltiD8G/0uxJhEPPm7PJMYBnR3XVehxCVwAC0
+	PNSjGXjpvDTeRy+W5VC4NganEDAjSCGv6LUdbo+c=
+MIME-Version: 1.0
+Sender: EDAS Conference Manager <help@edas.info>
+From: "R10 HTC 2023 (info.htc2023@gmail.com)"
+ <info.htc2023=gmail.com@edas.info>
+To: Sadia Islam <sadia.islam15@g.bracu.ac.bd>, Porna Rani Datta
+ <porna.rani.datta@g.bracu.ac.bd>
+Reply-to: R10 HTC 2023 <info.htc2023@gmail.com>
+Message-ID: <01000187ea1cd5e4-7fe96e28-084f-4fbb-8a4a-9dbc6bdeb57a-000000@email.amazonses.com>
+Subject: [R10 HTC 2023] #1570910304 has been uploaded
+Date: Fri, 5 May 2023 04:12:51 +0000
+Keywords: r10htc2023 script=uploadPaper process=ZFSCPeBL7rigE7EGFFE6jQAAAAI
+ template=paper_uploaded:paper M=1570910304
+Content-Type: text/html; charset=utf-8
+Content-Transfer-Encoding: 7bit
+Feedback-ID: 1.us-east-1.IiBJgIKr6aPfrJVfjq+gGO4QbgoF+/tazJBtqAlizOQ=:AmazonSES
+X-SES-Outgoing: 2023.05.05-54.240.8.55
+
+<html>
+<p>Dear Ms. Sadia Islam:</p>
+              
+<p>Thank you for uploading your paper 1570910304 (<em>Transfer Learning for
+Tomato Leaf Disease Detection: A Comparative Study</em>) to <b>2023 IEEE
+11th Region 10 Humanitarian Technology Conference (R10-HTC)</b>.  The paper
+is of type application/pdf and has a length of 507586 bytes.</p>
+
+
+
+<p>You can modify your paper at
+
+<a href="https://edas.info/showPaper.php?m=1570910304">1570910304</a>  
+
+and see all your submissions at
+ 
+https://edas.info/index.php?c=30216
+ 
+using the EDAS identifier sadia.islam15@g.bracu.ac.bd</p>
+
+<p>Regards,<br/>
+</p>
+</html>
